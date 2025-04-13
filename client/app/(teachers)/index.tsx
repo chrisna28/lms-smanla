@@ -64,6 +64,17 @@ export default function Index() {
                   sumStudents="20"
                 />
               </Link>
+              <Link href="/(classDetails)/3">
+                <CardClass
+                  nameClass="Biologi"
+                  gradeClass="Kelas X-3"
+                  homeRoomTeacher="Ahmad Fauzi, S.Pd."
+                  dayClass="Rabu"
+                  timeStartClass="10:00"
+                  timeEndClass="11:00"
+                  sumStudents="15"
+                />
+              </Link>
             </View>
           </View>
         </ScrollView>
