@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 16,
     borderTopRightRadius: 16,
     flexGrow: 1,
-    paddingBottom: 120, // Extra padding at bottom for better scrolling
+    paddingBottom: 120,
   },
   classListTitle: {
     fontSize: 18,

@@ -32,7 +32,7 @@ const AccountHeader = ({ image, name, nip }: AccountHeaderProps) => {
         <TextInput
           style={styles.searchInput}
           placeholder="Search"
-          placeholderTextColor="#000"
+          placeholderTextColor="#B3B3B3"
         />
         <TouchableOpacity style={styles.iconButton}>
           <Ionicons name="filter" size={20} color="#000" />
@@ -87,6 +87,7 @@ const styles = StyleSheet.create({
   },
   searchInput: {
     flex: 1,
+    fontSize: 16,
     backgroundColor: "#fff",
     borderRadius: 8,
     padding: 16,
