@@ -9,7 +9,7 @@ import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CustomHeader from "@/components/CustomHeader";
 import AccountHeader from "@/components/AccountHeader";
-import { useRouter } from "expo-router";
+import { Link, useRouter } from "expo-router";
 import CardClass from "@/components/CardClass";
 import { StatusBar } from "expo-status-bar";
 
@@ -52,51 +52,22 @@ export default function Index() {
               Daftar Kelas
             </Text>
             <View style={{ gap: 16 }}>
-              <CardClass
-                nameClass="Matematika"
-                gradeClass="Kelas X-1"
-                homeRoomTeacher="Budi Santoso, S.Pd., M.Pd."
-                dayClass="Senin"
-                timeStartClass="08:00"
-                timeEndClass="09:00"
-                sumStudents="10"
-              />
-              <CardClass
-                nameClass="Matematika"
-                gradeClass="Kelas X-1"
-                homeRoomTeacher="Budi Santoso, S.Pd., M.Pd."
-                dayClass="Senin"
-                timeStartClass="08:00"
-                timeEndClass="09:00"
-                sumStudents="10"
-              />
-              <CardClass
-                nameClass="Matematika"
-                gradeClass="Kelas X-1"
-                homeRoomTeacher="Budi Santoso, S.Pd., M.Pd."
-                dayClass="Senin"
-                timeStartClass="08:00"
-                timeEndClass="09:00"
-                sumStudents="10"
-              />
-              <CardClass
-                nameClass="Matematika"
-                gradeClass="Kelas X-1"
-                homeRoomTeacher="Budi Santoso, S.Pd., M.Pd."
-                dayClass="Senin"
-                timeStartClass="08:00"
-                timeEndClass="09:00"
-                sumStudents="10"
-              />
-              <CardClass
-                nameClass="Matematika"
-                gradeClass="Kelas X-1"
-                homeRoomTeacher="Budi Santoso, S.Pd., M.Pd."
-                dayClass="Senin"
-                timeStartClass="08:00"
-                timeEndClass="09:00"
-                sumStudents="10"
-              />
+              <Link
+                href={{
+                  pathname: "/(students)/classDetail/[id]",
+                  params: { id: "1" },
+                }}
+              >
+                <CardClass
+                  nameClass="Matematika"
+                  gradeClass="Kelas X-1"
+                  homeRoomTeacher="Budi Santoso, S.Pd., M.Pd."
+                  dayClass="Senin"
+                  timeStartClass="08:00"
+                  timeEndClass="09:00"
+                  sumStudents="10"
+                />
+              </Link>
             </View>
           </View>
         </ScrollView>

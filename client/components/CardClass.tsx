@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -10,6 +10,7 @@ const CardClass = ({
   sumStudents,
   dayClass,
   homeRoomTeacher,
+  onPress,
 }: any) => {
   return (
     <View
@@ -20,7 +21,8 @@ const CardClass = ({
         borderRadius: 16,
         height: 150,
         maxHeight: 150,
-        width: "auto",
+        width: "100%",
+        maxWidth: 400,
         shadowColor: "#000",
         shadowOffset: {
           width: 0,
@@ -38,7 +40,7 @@ const CardClass = ({
         <Text style={{ fontWeight: "bold", fontSize: 20, color: "#fff" }}>
           {nameClass}
         </Text>
-        <TouchableOpacity>
+        <Pressable>
           <Ionicons
             name="ellipsis-vertical"
             size={20}
@@ -46,7 +48,7 @@ const CardClass = ({
             style={{ alignSelf: "flex-end" }}
             onPress={() => alert("Menu")}
           />
-        </TouchableOpacity>
+        </Pressable>
       </View>
       <View style={{ flexDirection: "column", gap: 4 }}>
         <Text style={{ fontWeight: "bold", fontSize: 16, color: "#fff" }}>
