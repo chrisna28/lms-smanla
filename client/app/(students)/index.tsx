@@ -1,0 +1,70 @@
+import {
+  View,
+  Text,
+  StyleSheet,
+  KeyboardAvoidingView,
+  ScrollView,
+} from "react-native";
+import React from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
+import CustomHeader from "@/components/CustomHeader";
+import AccountHeader from "@/components/AccountHeader";
+import { useRouter } from "expo-router";
+import CardClass from "@/components/CardClass";
+
+export default function Index() {
+  const router = useRouter();
+  return (
+    <SafeAreaView style={styles.container}>
+      <KeyboardAvoidingView>
+        <ScrollView style={{ flexGrow: 1 }}>
+          <CustomHeader
+            label="Beranda"
+            onPressBack={() => {
+              router.back();
+            }}
+          />
+          <AccountHeader
+            image={require("@/assets/images/PhotoProfile.png")}
+            name="Chrisna Mahendra Utama"
+            nip="2411007"
+          />
+          <View
+            style={{
+              flexDirection: "column",
+              gap: 16,
+              backgroundColor: "#fff",
+              padding: 16,
+              marginTop: 16,
+              borderTopEndRadius: 16,
+              borderTopStartRadius: 16,
+            }}
+          >
+            <Text
+              style={{
+                fontSize: 18,
+                fontWeight: "bold",
+                marginBottom: 1,
+              }}
+            >
+              Daftar Kelas
+            </Text>
+            <CardClass
+              nameClass="Matematika"
+              gradeClass="A"
+              timeClass="08:00"
+              sumStudents="10"
+            />
+          </View>
+        </ScrollView>
+      </KeyboardAvoidingView>
+    </SafeAreaView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#3674B5",
+  },
+});
