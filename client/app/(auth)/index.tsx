@@ -45,7 +45,7 @@ export default function App() {
   const handleSignIn = () => {
     console.log("Username: ", username);
     console.log("Password: ", password);
-    router.navigate("/(students)");
+    router.navigate("/(teachers)");
   };
 
   return (

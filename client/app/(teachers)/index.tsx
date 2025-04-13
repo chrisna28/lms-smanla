@@ -42,7 +42,7 @@ export default function Index() {
           <View style={styles.classListContainer}>
             <Text style={styles.classListTitle}>Daftar Kelas</Text>
             <View style={styles.classGrid}>
-              <Link href="/(students)/(classDetails)/1">
+              <Link href="/(classDetails)/1">
                 <CardClass
                   nameClass="Matematika"
                   gradeClass="Kelas X-1"
@@ -51,6 +51,17 @@ export default function Index() {
                   timeStartClass="08:00"
                   timeEndClass="09:00"
                   sumStudents="10"
+                />
+              </Link>
+              <Link href="/(classDetails)/2">
+                <CardClass
+                  nameClass="Bahasa Inggris"
+                  gradeClass="Kelas X-2"
+                  homeRoomTeacher="Siti Aminah, S.Pd."
+                  dayClass="Selasa"
+                  timeStartClass="09:00"
+                  timeEndClass="10:00"
+                  sumStudents="20"
                 />
               </Link>
             </View>
