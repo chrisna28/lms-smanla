@@ -11,13 +11,15 @@ import CustomHeader from "@/components/CustomHeader";
 import AccountHeader from "@/components/AccountHeader";
 import { useRouter } from "expo-router";
 import CardClass from "@/components/CardClass";
+import { StatusBar } from "expo-status-bar";
 
 export default function Index() {
   const router = useRouter();
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar style={"light"} />
       <KeyboardAvoidingView>
-        <ScrollView style={{ flexGrow: 1 }}>
+        <ScrollView style={{ flexGrow: 1, backgroundColor: "#3674B5" }}>
           <CustomHeader
             label="Beranda"
             onPressBack={() => {
@@ -49,12 +51,53 @@ export default function Index() {
             >
               Daftar Kelas
             </Text>
-            <CardClass
-              nameClass="Matematika"
-              gradeClass="A"
-              timeClass="08:00"
-              sumStudents="10"
-            />
+            <View style={{ gap: 16 }}>
+              <CardClass
+                nameClass="Matematika"
+                gradeClass="Kelas X-1"
+                homeRoomTeacher="Budi Santoso, S.Pd., M.Pd."
+                dayClass="Senin"
+                timeStartClass="08:00"
+                timeEndClass="09:00"
+                sumStudents="10"
+              />
+              <CardClass
+                nameClass="Matematika"
+                gradeClass="Kelas X-1"
+                homeRoomTeacher="Budi Santoso, S.Pd., M.Pd."
+                dayClass="Senin"
+                timeStartClass="08:00"
+                timeEndClass="09:00"
+                sumStudents="10"
+              />
+              <CardClass
+                nameClass="Matematika"
+                gradeClass="Kelas X-1"
+                homeRoomTeacher="Budi Santoso, S.Pd., M.Pd."
+                dayClass="Senin"
+                timeStartClass="08:00"
+                timeEndClass="09:00"
+                sumStudents="10"
+              />
+              <CardClass
+                nameClass="Matematika"
+                gradeClass="Kelas X-1"
+                homeRoomTeacher="Budi Santoso, S.Pd., M.Pd."
+                dayClass="Senin"
+                timeStartClass="08:00"
+                timeEndClass="09:00"
+                sumStudents="10"
+              />
+              <CardClass
+                nameClass="Matematika"
+                gradeClass="Kelas X-1"
+                homeRoomTeacher="Budi Santoso, S.Pd., M.Pd."
+                dayClass="Senin"
+                timeStartClass="08:00"
+                timeEndClass="09:00"
+                sumStudents="10"
+              />
+            </View>
           </View>
         </ScrollView>
       </KeyboardAvoidingView>

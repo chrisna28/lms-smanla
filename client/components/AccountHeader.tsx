@@ -37,20 +37,6 @@ const AccountHeader = ({ image, name, nip }: any) => {
             <Text style={{ fontSize: 14, color: "#fff" }}>{nip}</Text>
           </View>
         </View>
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <Ionicons
-            name="notifications"
-            size={20}
-            color="#fff"
-            style={{ padding: 4 }}
-          />
-          <Ionicons
-            name="settings"
-            size={20}
-            color="#fff"
-            style={{ marginLeft: 16, padding: 4 }}
-          />
-        </View>
       </View>
       <View
         style={{

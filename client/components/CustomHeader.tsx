@@ -34,6 +34,27 @@ const CustomHeader = ({ label, onPressBack }: any) => {
             {label}
           </Text>
         </View>
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            gap: 8,
+            marginRight: 16,
+          }}
+        >
+          <Ionicons
+            name="notifications"
+            size={20}
+            color="#fff"
+            style={{ padding: 4 }}
+          />
+          <Ionicons
+            name="settings"
+            size={20}
+            color="#fff"
+            style={{ marginLeft: 16, padding: 4 }}
+          />
+        </View>
       </View>
     </View>
   );
