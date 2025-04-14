@@ -10,7 +10,6 @@ const CardClass = ({
   sumStudents,
   dayClass,
   homeRoomTeacher,
-  onPress,
 }: any) => {
   return (
     <View

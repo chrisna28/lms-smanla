@@ -1,14 +1,7 @@
-import {
-  Image,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-  ImageSourcePropType,
-} from "react-native";
+import { StyleSheet, View, ImageSourcePropType } from "react-native";
 import React from "react";
-import { Ionicons } from "@expo/vector-icons";
+import Profile from "./Profile";
+import SeacrhFilterBar from "./SeacrhFilterBar";
 
 type AccountHeaderProps = {
   image: ImageSourcePropType;
@@ -20,27 +13,9 @@ const AccountHeader = ({ image, name, nip }: AccountHeaderProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.profileSection}>
-        <View style={styles.userInfo}>
-          <Image source={image} style={styles.profileImage} />
-          <View style={styles.textContainer}>
-            <Text style={styles.nameText}>{name}</Text>
-            <Text style={styles.nipText}>{nip}</Text>
-          </View>
-        </View>
+        <Profile image={image} name={name} nip={nip} />
       </View>
-      <View style={styles.searchSection}>
-        <TextInput
-          style={styles.searchInput}
-          placeholder="Search"
-          placeholderTextColor="#B3B3B3"
-        />
-        <TouchableOpacity style={styles.iconButton}>
-          <Ionicons name="filter" size={20} color="#000" />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.iconButton}>
-          <Ionicons name="search" size={20} color="#000" />
-        </TouchableOpacity>
-      </View>
+      <SeacrhFilterBar />
     </View>
   );
 };
@@ -56,64 +31,5 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-  },
-  userInfo: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  profileImage: {
-    width: 50,
-    height: 50,
-    borderRadius: 50,
-    alignSelf: "center",
-  },
-  textContainer: {
-    marginLeft: 16,
-    gap: 4,
-  },
-  nameText: {
-    fontSize: 18,
-    fontWeight: "bold",
-    color: "#fff",
-  },
-  nipText: {
-    fontSize: 14,
-    color: "#fff",
-  },
-  searchSection: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    gap: 8,
-  },
-  searchInput: {
-    flex: 1,
-    fontSize: 16,
-    backgroundColor: "#fff",
-    borderRadius: 8,
-    padding: 16,
-    marginTop: 16,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-  },
-  iconButton: {
-    backgroundColor: "#fff",
-    borderRadius: 8,
-    padding: 16,
-    marginTop: 16,
-    alignItems: "center",
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
   },
 });
