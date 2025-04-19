@@ -6,9 +6,10 @@ type CardPostProps = {
   image: ImageSourcePropType;
   name: string;
   time: string;
+  postContent: string;
 };
 
-const CardPost = ({ image, name, time }: CardPostProps) => {
+const CardPost = ({ image, name, time, postContent }: CardPostProps) => {
   return (
     <View style={styles.container}>
       <View style={{ justifyContent: "flex-start" }}>
@@ -18,7 +19,7 @@ const CardPost = ({ image, name, time }: CardPostProps) => {
           nip={time}
           containerStyle={{}}
           textContainerStyle={{ gap: 2 }}
-          imageStyle={{ width: 40, height: 40 }}
+          imageStyle={{ width: 40, height: 40, marginRight: 12 }}
           nameStyle={{ fontSize: 16 }}
           nipStyle={{ fontSize: 12 }}
         />
@@ -30,11 +31,10 @@ const CardPost = ({ image, name, time }: CardPostProps) => {
             fontSize: 14,
             marginBottom: 8,
             textAlign: "justify",
+            lineHeight: 20,
           }}
         >
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error magnam
-          incidunt nesciunt odit quidem. Ratione ullam nulla id debitis?
-          Doloribus amet nisi debitis deserunt et? Porro neque ab aut dolores.
+          {postContent}
         </Text>
       </View>
     </View>

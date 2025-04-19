@@ -53,10 +53,10 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 50,
+    marginRight: 16,
     alignSelf: "center",
   },
   textContainer: {
-    marginLeft: 16,
     gap: 4,
   },
   nameText: {

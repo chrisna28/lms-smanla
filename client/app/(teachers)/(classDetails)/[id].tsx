@@ -15,7 +15,7 @@ import AddPost from "@/components/AddPost";
 import CardPost from "@/components/CardPost";
 
 export default function Index() {
-  const { id } = useLocalSearchParams();
+  const { id, nameClass, gradeClass } = useLocalSearchParams();
   const router = useRouter();
 
   return (
@@ -30,7 +30,7 @@ export default function Index() {
           contentContainerStyle={styles.scrollContent}
         >
           <CustomHeader
-            label={`Kelas ${id}`}
+            label={`Kelas ${nameClass} ${gradeClass}`}
             onPressBack={() => {
               router.back();
             }}
@@ -52,6 +52,7 @@ export default function Index() {
                 image={require("@/assets/images/PhotoProfile.png")}
                 name="Chrisna Mahendra Utama"
                 time="28/09/2025, Jam 10:00"
+                postContent="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, dicta."
               />
             </View>
           </View>
