@@ -30,7 +30,7 @@ const CardPost = ({ image, name, time, postContent }: CardPostProps) => {
             color: "#fff",
             fontSize: 14,
             marginBottom: 8,
-            textAlign: "justify",
+            textAlign: "left",
             lineHeight: 20,
           }}
         >
