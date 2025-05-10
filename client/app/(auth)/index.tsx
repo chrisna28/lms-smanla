@@ -13,7 +13,7 @@ import { useState, useEffect } from "react";
 import { StyleSheet } from "react-native";
 import FormInput from "@/components/FormInput";
 import Button from "@/components/Button";
-import { Link, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
 
 export default function App() {
   const [username, setUsername] = useState("");

@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.25,
     shadowRadius: 4,
-    borderRadius: 8,
+    borderRadius: 16,
   },
   addIcon: {
     backgroundColor: "#578FCA",

@@ -4,7 +4,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 export default function TeachersLayout() {
   return (
     <SafeAreaProvider>
-      <Stack screenOptions={{ headerShown: false }}>
+      <Stack>
         <Stack.Screen
           name="index"
           options={{
@@ -14,6 +14,12 @@ export default function TeachersLayout() {
         <Stack.Screen
           name="(classDetails)/[id]"
           options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="postClass"
+          options={{
+            headerShown: false,
+          }}
         />
       </Stack>
     </SafeAreaProvider>

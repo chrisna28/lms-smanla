@@ -5,41 +5,50 @@ import { Ionicons } from "@expo/vector-icons";
 type CustomHeaderProps = {
   label: string;
   onPressBack: () => void;
+  isIoniconsAvailable?: boolean;
+  onPressNotification?: () => void;
+  onPressSettings?: () => void;
 };
 
-const CustomHeader = ({ label, onPressBack }: CustomHeaderProps) => {
+const CustomHeader = ({
+  label,
+  onPressBack,
+  isIoniconsAvailable = false,
+  onPressNotification = () => alert("Notifications"),
+  onPressSettings = () => alert("Settings"),
+}: CustomHeaderProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.headerContent}>
         <View style={styles.leftSection}>
-          <TouchableOpacity onPress={onPressBack}>
-            <Ionicons
-              name="arrow-back"
-              size={20}
-              color="#fff"
-              style={styles.backIcon}
-            />
+          <TouchableOpacity
+            onPress={onPressBack}
+            style={styles.backButton}
+            accessibilityLabel="Go back"
+          >
+            <Ionicons name="arrow-back" size={20} color="#fff" />
           </TouchableOpacity>
-          <Text style={styles.headerTitle}>{label}</Text>
+          <Text style={styles.headerTitle} numberOfLines={1}>
+            {label}
+          </Text>
         </View>
-        <View style={styles.rightSection}>
-          <TouchableOpacity>
-            <Ionicons
-              name="notifications"
-              size={20}
-              color="#fff"
-              style={styles.icon}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Ionicons
-              name="settings"
-              size={20}
-              color="#fff"
-              style={styles.settingsIcon}
-            />
-          </TouchableOpacity>
-        </View>
+
+        {isIoniconsAvailable && (
+          <View style={styles.rightSection}>
+            <TouchableOpacity
+              onPress={onPressNotification}
+              accessibilityLabel="Notifications"
+            >
+              <Ionicons name="notifications-outline" size={20} color="#fff" />
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={onPressSettings}
+              accessibilityLabel="Settings"
+            >
+              <Ionicons name="settings-outline" size={20} color="#fff" />
+            </TouchableOpacity>
+          </View>
+        )}
       </View>
     </View>
   );
@@ -50,39 +59,33 @@ export default CustomHeader;
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 16,
-    paddingBottom: 16,
-    paddingTop: 8,
+    paddingVertical: 12,
     backgroundColor: "#3674B5",
   },
   headerContent: {
-    justifyContent: "space-between",
     flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   leftSection: {
     flexDirection: "row",
     alignItems: "center",
+    flex: 1,
+    marginRight: 16,
   },
   rightSection: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 8,
-    marginRight: 16,
+    gap: 20,
   },
-  backIcon: {
-    marginRight: 16,
+  backButton: {
     padding: 4,
+    marginRight: 12,
   },
   headerTitle: {
-    fontSize: 20,
-    fontWeight: "bold",
+    fontSize: 18,
+    fontWeight: "600",
     color: "#fff",
-    marginBottom: 1,
-  },
-  icon: {
-    padding: 4,
-  },
-  settingsIcon: {
-    marginLeft: 16,
-    padding: 4,
+    flexShrink: 1,
   },
 });

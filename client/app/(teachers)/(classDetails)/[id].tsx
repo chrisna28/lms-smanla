@@ -4,7 +4,6 @@ import {
   KeyboardAvoidingView,
   ScrollView,
   Platform,
-  FlatList,
 } from "react-native";
 import React, { useState, useEffect } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -146,6 +145,10 @@ export default function ClassDetail() {
     }[]
   >([]);
 
+  const handleAddPost = () => {
+    router.push("/(teachers)/postClass");
+  };
+
   useEffect(() => {
     const classId =
       typeof id === "string"
@@ -174,6 +177,7 @@ export default function ClassDetail() {
             onPressBack={() => {
               router.back();
             }}
+            isIoniconsAvailable={true}
           />
           <AccountHeader
             image={require("@/assets/images/PhotoProfile.png")}
@@ -182,24 +186,21 @@ export default function ClassDetail() {
           />
           <View style={styles.classListContainer}>
             <View style={styles.classGrid}>
-              <AddPost label="Tambah Pengumuman" onPress={() => {}} />
-
-              {posts.length > 0 ? (
-                <FlatList
-                  data={posts}
-                  keyExtractor={(item) => item.id.toString()}
-                  renderItem={({ item }) => (
-                    <CardPost
-                      image={item.image}
-                      name={item.name}
-                      time={item.time}
-                      postContent={item.postContent}
-                    />
-                  )}
-                  scrollEnabled={false}
-                  contentContainerStyle={{ gap: 16 }}
+              <AddPost
+                label="Tambah Pengumuman"
+                onPress={() => {
+                  handleAddPost();
+                }}
+              />
+              {posts.map((post) => (
+                <CardPost
+                  key={post.id}
+                  image={post.image}
+                  name={post.name}
+                  time={post.time}
+                  postContent={post.postContent}
                 />
-              ) : null}
+              ))}
             </View>
           </View>
         </ScrollView>

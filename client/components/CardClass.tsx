@@ -36,7 +36,7 @@ const CardClass = ({
       </View>
       <View style={styles.infoContainer}>
         <Text style={styles.gradeText}>
-          {gradeClass} ({homeRoomTeacher})
+          Kelas {gradeClass} ({homeRoomTeacher})
         </Text>
         <Text style={styles.scheduleText}>
           Hari {dayClass}, Jam {timeStartClass} - {timeEndClass}
@@ -55,8 +55,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#3674B5",
     padding: 16,
     borderRadius: 16,
-    height: 150,
-    maxHeight: 150,
+    height: 140,
+    maxHeight: 140,
     width: "100%",
     maxWidth: 400,
     shadowColor: "#000",
@@ -69,7 +69,6 @@ const styles = StyleSheet.create({
     elevation: 5,
     justifyContent: "space-between",
     flexDirection: "column",
-    marginBottom: 16,
   },
   headerRow: {
     flexDirection: "row",
@@ -77,7 +76,7 @@ const styles = StyleSheet.create({
   },
   titleText: {
     fontWeight: "bold",
-    fontSize: 20,
+    fontSize: 18,
     color: "#fff",
   },
   menuIcon: {
@@ -89,12 +88,12 @@ const styles = StyleSheet.create({
   },
   gradeText: {
     fontWeight: "bold",
-    fontSize: 16,
+    fontSize: 14,
     color: "#fff",
   },
   scheduleText: {
     fontWeight: "500",
-    fontSize: 16,
+    fontSize: 14,
     color: "#fff",
   },
   studentCountText: {

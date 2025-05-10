@@ -8,6 +8,7 @@ const FormInput = ({
   value,
   onChangeText,
   keyboardType,
+  editable,
 }: any) => {
   return (
     <View style={{ gap: 8 }}>
@@ -19,10 +20,12 @@ const FormInput = ({
           </Text>
         )}
       </View>
-      <View style={{ padding: 4 }}>
+      <View>
         <TextInput
           style={{
             height: 40,
+            maxWidth: "100%",
+            minWidth: "38%",
             borderColor: "gray",
             borderWidth: 1,
             padding: 10,
@@ -36,6 +39,7 @@ const FormInput = ({
           onChangeText={onChangeText}
           autoCapitalize="none"
           keyboardType={keyboardType}
+          editable={editable}
         />
       </View>
     </View>

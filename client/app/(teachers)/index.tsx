@@ -5,7 +5,6 @@ import {
   KeyboardAvoidingView,
   ScrollView,
   Platform,
-  FlatList,
 } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -14,6 +13,7 @@ import AccountHeader from "@/components/AccountHeader";
 import { Link, useRouter } from "expo-router";
 import CardClass from "@/components/CardClass";
 import { StatusBar } from "expo-status-bar";
+import AddPost from "@/components/AddPost";
 
 export default function Index() {
   const router = useRouter();
@@ -121,6 +121,10 @@ export default function Index() {
     },
   ];
 
+  const handleAddPost = () => {
+    router.push("/(teachers)/postClass");
+  };
+
   return (
     <SafeAreaView style={styles.container} edges={["top"]}>
       <StatusBar style="light" />
@@ -137,6 +141,7 @@ export default function Index() {
             onPressBack={() => {
               router.back();
             }}
+            isIoniconsAvailable={true}
           />
           <AccountHeader
             image={require("@/assets/images/PhotoProfile.png")}
@@ -145,32 +150,36 @@ export default function Index() {
           />
           <View style={styles.classListContainer}>
             <Text style={styles.classListTitle}>Daftar Kelas</Text>
-            <FlatList
-              data={classesData}
-              keyExtractor={(item) => item.id.toString()}
-              renderItem={({ item }) => (
-                <Link
-                  href={{
-                    pathname: "/(teachers)/(classDetails)/[id]",
-                    params: {
-                      id: item.id,
-                      nameClass: item.nameClass,
-                      gradeClass: item.gradeClass,
-                    },
-                  }}
-                >
-                  <CardClass
-                    nameClass={item.nameClass}
-                    gradeClass={item.gradeClass}
-                    homeRoomTeacher={item.homeRoomTeacher}
-                    dayClass={item.dayClass}
-                    timeStartClass={item.timeStartClass}
-                    timeEndClass={item.timeEndClass}
-                    sumStudents={item.sumStudents}
-                  />
-                </Link>
-              )}
+            <AddPost
+              label="Tambah Pengumuman"
+              onPress={() => {
+                handleAddPost();
+              }}
             />
+            {classesData.map((post) => (
+              <Link
+                key={post.id}
+                href={{
+                  pathname: "/(teachers)/(classDetails)/[id]",
+                  params: {
+                    id: post.id,
+                    nameClass: post.nameClass,
+                    gradeClass: post.gradeClass,
+                  },
+                }}
+              >
+                <CardClass
+                  key={post.id}
+                  nameClass={post.nameClass}
+                  gradeClass={post.gradeClass}
+                  timeStartClass={post.timeStartClass}
+                  timeEndClass={post.timeEndClass}
+                  sumStudents={post.sumStudents}
+                  dayClass={post.dayClass}
+                  homeRoomTeacher={post.homeRoomTeacher}
+                />
+              </Link>
+            ))}
           </View>
         </ScrollView>
       </KeyboardAvoidingView>
